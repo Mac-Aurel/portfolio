@@ -791,3 +791,135 @@ html {
         bottom: 70px; /* Ajuste la position du texte */
     }
 }
+
+/* 📌 Pour les écrans de taille moyenne (tablettes et petits PC) */
+@media screen and (max-width: 1024px) {
+    .hero-blur {
+        width: 80%;
+        max-width: 500px;
+        padding: 25px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        max-width: 450px;
+    }
+
+    .hero-links {
+        gap: 15px;
+    }
+
+    .hero-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hero-btn img {
+        width: 40px;
+    }
+
+    /* Ajustement de la valise */
+    .suitcase-container {
+        bottom: 80px;
+    }
+
+    .suitcase {
+        width: 140px;
+    }
+
+    .click-text {
+        font-size: 16px;
+        bottom: 90px;
+    }
+}
+
+/* 📌 Pour les petits écrans (smartphones) */
+@media screen and (max-width: 768px) {
+    /* 💡 Ajustement des boutons pour éviter le chevauchement */
+    .nav-center {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-center a {
+        width: 80%; /* Les boutons prennent presque toute la largeur */
+        padding: 10px 0; /* Ajuste la hauteur */
+        font-size: 16px; /* Réduit la taille du texte */
+    }
+
+    /* 📌 Ajustement du profil */
+    .nav-profile {
+        left: 10px;
+        top: 5px;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* 📌 Ajustement du titre et du sous-titre */
+    .hero-blur {
+        width: 90%;
+        max-width: 380px;
+        padding: 15px;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        max-width: 350px;
+        line-height: 1.4;
+    }
+
+    /* 📌 Correction des icônes GitHub & LinkedIn */
+    .hero-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-btn img {
+        width: 35px;
+    }
+
+    /* 📌 Ajustement de la valise */
+    .suitcase-container {
+        bottom: 100px;
+    }
+
+    .suitcase {
+        width: 120px;
+    }
+
+    .click-text {
+        font-size: 14px;
+        bottom: 110px;
+    }
+
+    /* 📌 Ajustement de la section Expériences */
+    .experiences-section {
+        height: auto;
+        min-height: 500px;
+        padding: 20px;
+    }
+
+    .experiences-content {
+        padding: 20px;
+        font-size: 14px;
+    }
+}
