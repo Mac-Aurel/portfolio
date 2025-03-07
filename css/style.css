@@ -923,3 +923,152 @@ html {
         font-size: 14px;
     }
 }
+
+/* 📌 Ajustements pour les écrans moyens (tablettes) */
+@media screen and (max-width: 1024px) {
+    /* Centrer les boutons et réduire leur taille */
+    .nav-center {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .nav-center a {
+        width: 70%;
+        padding: 8px 0;
+        font-size: 16px;
+    }
+
+    /* Ajustement du flou */
+    .hero-blur {
+        width: 80%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        max-width: 450px;
+    }
+
+    /* Correction des icônes GitHub & LinkedIn */
+    .hero-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero-btn {
+        width: 65px;
+        height: 65px;
+    }
+
+    .hero-btn img {
+        width: 40px;
+    }
+
+    /* Ajustement de la valise */
+    .suitcase-container {
+        bottom: 70px;
+    }
+
+    .suitcase {
+        width: 120px;
+    }
+
+    .click-text {
+        font-size: 14px;
+        bottom: 90px;
+    }
+}
+
+/* 📌 Ajustements pour mobile (768px et moins) */
+@media screen and (max-width: 768px) {
+    /* Navbar compacte */
+    .nav-center {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .nav-center a {
+        width: 75%;
+        padding: 8px 0;
+        font-size: 15px;
+    }
+
+    /* Centrer la photo de profil */
+    .nav-profile {
+        left: 10px;
+        top: 5px;
+    }
+
+    .profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Réduire et recentrer le bloc hero-blur */
+    .hero-blur {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        max-width: 300px;
+        line-height: 1.4;
+    }
+
+    /* Correction des icônes GitHub & LinkedIn */
+    .hero-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .hero-btn img {
+        width: 30px;
+    }
+
+    /* 📌 Ajustement de la valise */
+    .suitcase-container {
+        bottom: 80px;
+    }
+
+    .suitcase {
+        width: 100px; /* Réduit la valise sur mobile */
+    }
+
+    .click-text {
+        font-size: 12px;
+        bottom: 100px;
+    }
+
+    /* Ajustement de la section Expériences */
+    .experiences-section {
+        height: auto;
+        min-height: 450px;
+        padding: 15px;
+    }
+
+    .experiences-content {
+        padding: 15px;
+        font-size: 13px;
+    }
+}
