@@ -335,7 +335,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Noir avec opacité */
+    background: rgba(0, 0, 0, 0.8); /* Noir avec opacité */
     z-index: 0; /* Place l'overlay sous le texte mais au-dessus de la vidéo */
 }
 
@@ -492,7 +492,7 @@ html {
 .suitcase-container {
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     bottom: 50px; /* Ajuste la position pour être bien visible */
     left: 50%;
     transform: translateX(-50%);
@@ -565,7 +565,7 @@ html {
 
 /* Mots-clés en valeur */
 .highlight {
-    color: #ffb347;
+    color: #23201e;
     font-weight: bold;
 }
 
@@ -608,4 +608,186 @@ html {
 /* Animation des images au survol */
 .hero-btn:hover img {
     transform: scale(1.1);
+}
+
+/* Section Expériences avec un background */
+.experiences-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/texture.jpg") center/cover no-repeat;
+    /*background: red;*/
+}
+
+/* Overlay pour assombrir */
+.experiences-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Overlay sombre */
+    z-index: 1;
+}
+
+.experiences-content {
+    position: relative;
+    z-index: 10; /* Doit être au-dessus de l'overlay */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+/* 📌 Pour les écrans moyens (tablettes, 1024px et moins) */
+@media screen and (max-width: 1024px) {
+    .hero-blur {
+        width: 75%; /* Augmente la largeur pour s'adapter */
+        max-width: 500px;
+        padding: 25px;
+    }
+
+    .hero-title {
+        font-size: 32px; /* Diminue la taille du titre */
+    }
+
+    .hero-subtitle {
+        font-size: 16px; /* Texte plus petit */
+        max-width: 450px;
+    }
+
+    .hero-links {
+        gap: 20px; /* Moins d’espace entre les icônes */
+    }
+
+    .hero-btn {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-btn img {
+        width: 50px;
+    }
+
+    /* Ajustement du texte de la valise */
+    .click-text {
+        font-size: 16px;
+        bottom: 30px;
+    }
+
+    /* Ajustement de la section Expériences */
+    .experiences-section {
+        height: auto;
+        min-height: 700px;
+    }
+
+    .experiences-content {
+        padding: 40px;
+    }
+}
+
+/* 📌 Pour les écrans petits (mobiles, 768px et moins) */
+@media screen and (max-width: 768px) {
+    .hero-blur {
+        width: 90%; /* Prend presque toute la largeur */
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 26px; /* Réduit encore la taille du titre */
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        max-width: 350px;
+        line-height: 1.4;
+    }
+
+    .hero-links {
+        flex-direction: column; /* Empile les icônes en colonne */
+        gap: 15px;
+    }
+
+    .hero-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hero-btn img {
+        width: 40px;
+    }
+
+    /* Navbar adaptative */
+    .navbar {
+        flex-direction: column; /* Empile les éléments */
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-center {
+        position: static; /* Plus de position absolue */
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .cv-button {
+        position: static;
+        margin-top: 10px;
+    }
+
+    /* Ajustement du texte et de la valise */
+    .click-text {
+        font-size: 14px;
+        bottom: 40px;
+    }
+
+    .suitcase {
+        width: 150px;
+    }
+
+    /* Ajustement de la section Expériences */
+    .experiences-section {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .experiences-content {
+        padding: 30px;
+    }
+}
+
+/* 📌 Pour les écrans moyens (tablettes, 1024px et moins) */
+@media screen and (max-width: 1024px) {
+    .suitcase-container {
+        bottom: 40px; /* Remonte un peu la valise */
+    }
+
+    .suitcase {
+        width: 150px; /* Réduit légèrement la valise */
+    }
+
+    .click-text {
+        font-size: 16px;
+        bottom: 50px; /* Ajuste le texte de la valise */
+    }
+}
+
+/* 📌 Pour les écrans petits (mobiles, 768px et moins) */
+@media screen and (max-width: 768px) {
+    .suitcase-container {
+        bottom: 60px; /* Remonte encore la valise */
+    }
+
+    .suitcase {
+        width: 120px; /* Réduction de la valise sur mobile */
+    }
+
+    .click-text {
+        font-size: 14px;
+        bottom: 70px; /* Ajuste la position du texte */
+    }
 }
