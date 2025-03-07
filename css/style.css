@@ -1071,4 +1071,26 @@ html {
         padding: 15px;
         font-size: 13px;
     }
+/* 📌 Ajustement de l'alignement des boutons */
+.nav-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tous les boutons */
+    gap: 12px; /* Espacement uniforme */
+}
+
+/* 📌 Uniformisation de la taille des boutons */
+.nav-center a {
+    width: 75%; /* Largeur uniforme */
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap; /* Empêche le texte de se casser */
+}
+
+/* 📌 Correction spécifique pour le bouton Compétences */
+.nav-center a:nth-child(2) {
+    align-self: center; /* Forcer l'alignement au centre */
+}
+
 }
