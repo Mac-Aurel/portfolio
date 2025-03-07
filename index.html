@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const suitcase = document.getElementById("suitcase-img");
+    const imgClosed = "img/suitcase.png";
+    const imgOpen = "img/open_suitcase.png";
+
+    suitcase.addEventListener("mouseenter", () => {
+        suitcase.src = imgOpen;
+    });
+
+    suitcase.addEventListener("mouseleave", () => {
+        suitcase.src = imgClosed;
+    });
+
+    suitcase.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        suitcase.style.transform = "scale(1.2)";
+        setTimeout(() => {
+            suitcase.style.transform = "scale(1)";
+            document.querySelector("#experiences").scrollIntoView({ behavior: "smooth" });
+        }, 300);
+    });
+});
+</script>
+
+
+<body>
+  <div class="hero">
+      <video autoplay loop muted playsinline class="bg-video">
+          <source src="video/background1.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas les vidéos HTML5.
+      </video>
+
+    <header class="navbar">
+    <div class="nav-profile">
+        <img src="img/pic.jpeg" alt="Photo de profil" class="profile-pic">
+    </div>
+    <div class="nav-center">
+        <a href="#">Projets</a>
+        <a href="#">Compétences</a>
+        <a href="#">Profil</a>
+    </div>
+    <a href="doc/Mac-Aurel LAOUROU Data Scientist.pdf" download class="cv-button">Télécharger le CV</a>
+    </header>
+
+      <div class="overlay"></div>
+
+    <div class="hero-blur">
+    <h1 class="hero-title">Salut, moi c'est <span class="highlight">Mac-Aurel</span> !</h1>
+    <p class="hero-subtitle">
+        Je suis passionné par le <span class="highlight">Big Data</span> et l'<span class="highlight">IA</span>, et j'aime transformer les données en solutions intelligentes.
+    </p>
+    <div class="hero-links">
+        <a href="https://github.com/Mac-Aurel" target="_blank" rel="noopener noreferrer" class="hero-btn">
+            <img src="img/github.svg" alt="Lien 1">
+        </a>
+        <a href="https://www.linkedin.com/in/olade-laourou" target="_blank" rel="noopener noreferrer" class="hero-btn">
+            <img src="img/linkedin.svg" alt="Lien 2">
+        </a>
+    </div>
+</div>
+
+    <p class="click-text">Expériences</p>
+      <a href="#experiences" class="suitcase-container">
+      <img src="img/suitcase.png" alt="Valise fermée" class="suitcase" id="suitcase-img">
+      </a>
+
+  </div>
+    <section id="experiences">
+        <h1>Qui suis-je ?</h1>
+    </section>
+</body>
+
+</html>

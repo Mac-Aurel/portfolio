@@ -1,0 +1,611 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @font-face {
+    font-family: "MaPolice"; /* Nom personnalisé */
+    src: url("../fonts/ShadowHand.ttf") format("truetype"); /* Lien vers le fichier */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Évite tout dépassement */
+}
+
+.title {
+    font-size: 6vw;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif; /* Tu peux remplacer par une police personnalisée */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Arial, sans-serif;
+    display: block;
+    text-align: center;
+    margin-top: -10px;
+    width: 100%;
+}
+
+.little-text {
+    position: absolute;
+    top: calc(50% - 130px); /* Ajuste cette valeur pour bien centrer */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: white;
+    /*font-style: italic;*/
+    font-weight: normal;
+    /*text-transform: uppercase;*/
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 10vw;
+    }
+
+    .subtitle {
+        font-size: 3vw;
+    }
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste la vidéo sans déformation */
+    z-index: -1; /* Place la vidéo en arrière-plan */
+}
+
+/* Overlay pour assombrir la vidéo */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Noir avec opacité */
+    z-index: 0; /* Place l'overlay sous le texte mais au-dessus de la vidéo */
+}
+
+/* Styles pour le texte */
+.title, .subtitle {
+    position: relative; /* Pour que le texte soit au-dessus de la vidéo */
+    z-index: 1;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.header-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: white;
+    /*font-weight: bold;*/
+    text-align: left;
+    /*text-transform: uppercase;*/
+    line-height: 1.2;
+}
+
+.header-text .italic {
+    font-style: italic;
+}
+
+.button-container {
+    display: flex;
+    justify-content: left; /* Aligne les boutons à gauche */
+    gap: 20px; /* Espacement entre les boutons */
+    margin-top: 20px; /* Espace entre le titre et les boutons */
+    position: relative; /* S'assure que les boutons sont au-dessus de l'overlay */
+    z-index: 2; /* Met les boutons au-dessus de l’overlay */
+
+}
+
+
+.content-container {
+    width: 100%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+section {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background: black; /* Change la couleur selon tes besoins */
+    scroll-snap-align: start; /* Permet un arrêt propre après le scroll */
+    width: 100%; /* Prend toute la largeur */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.2); /* Transparence */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+    font-family: Arial, sans-serif; /* Police Arial */
+}
+
+/* Conteneur de la photo de profil (à gauche) */
+.nav-profile {
+    position: absolute;
+    left: 20px; /* Garde la photo bien à gauche */
+}
+
+/* Style de la photo de profil */
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Effet de zoom au survol */
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Conteneur des liens au centre */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+/* Liens de navigation avec arrondi et Arial */
+.nav-center a {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 30px; /* Boutons arrondis */
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+/* Effet au survol */
+.nav-center a:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Bouton Télécharger le CV (à droite) */
+.cv-button {
+    position: absolute;
+    right: 40px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 30px; /* Garde l'arrondi */
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+/* Effet hover pour le bouton CV */
+.cv-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.suitcase-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 50px; /* Ajuste la position pour être bien visible */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 10; /* Pour qu’elle soit bien au-dessus des autres éléments */
+}
+
+.suitcase {
+    width: 200px; /* Augmente la taille */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Effet d'agrandissement au clic */
+.suitcase:active {
+    transform: scale(1.2);
+}
+.click-text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 20px; /* Ajuste la hauteur pour être juste au-dessus de la valise */
+    left: 50%;
+    font-family: "Arial", sans-serif;
+    transform: translateX(-50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Légère ombre pour lisibilité */
+}
+
+/* Conteneur flou réduit */
+.hero-blur {
+    position: relative;
+    width: 50%; /* Réduit la largeur */
+    max-width: 600px; /* Diminue la taille max */
+    padding: 30px; /* Moins de padding */
+    margin: 60px auto 0; /* Réduit l'espace au-dessus */
+    backdrop-filter: blur(12px); /* Flou toujours visible */
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px; /* Légèrement moins arrondi */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Ombre ajustée */
+    z-index: 10;
+}
+
+/* Texte toujours bien visible */
+.hero-title, .hero-subtitle, .hero-links {
+    position: relative;
+    z-index: 20;
+}
+
+/* Titre légèrement réduit */
+.hero-title {
+    font-size: 35px; /* Taille réduite */
+    font-weight: bold;
+    color: white;
+    font-family: "Georgia", serif;
+    margin-bottom: 12px;
+}
+
+/* Sous-titre plus compact */
+.hero-subtitle {
+    font-size: 18px; /* Légèrement plus petit */
+    color: white;
+    max-width: 550px;
+    margin: 0 auto 20px;
+    font-family: "Arial", sans-serif;
+    line-height: 1.5; /* Un peu plus resserré */
+}
+
+/* Mots-clés en valeur */
+.highlight {
+    color: #ffb347;
+    font-weight: bold;
+}
+
+/* Conteneur des hero links avec espace ajusté */
+.hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Légèrement réduit */
+    margin-top: 15px;
+}
+
+/* Boutons réseaux sociaux plus petits */
+.hero-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px; /* Taille réduite */
+    height: 90px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Effet zoom plus subtil */
+.hero-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* Images des liens ajustées */
+.hero-btn img {
+    width: 55px; /* Images réduites */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation des images au survol */
+.hero-btn:hover img {
+    transform: scale(1.1);
+}
